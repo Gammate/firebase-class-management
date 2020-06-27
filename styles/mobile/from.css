@@ -1,0 +1,20 @@
+form{
+  background: #16173ebd;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  max-width: 300px;
+  padding: 10px;
+}
+form input,form button{
+  display: block;
+  outline: none;
+  width: 100%;
+  margin: 5px auto;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #464a4c;
+}
+form input:hover, form button:hover{
+  border-color: transparent;
+}

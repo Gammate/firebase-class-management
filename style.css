@@ -1,0 +1,11 @@
+@import './styles/mobile/from.css' screen and (max-width: 399px);
+@import './styles/desktop/from.css' screen and (min-width: 400px);
+
+*{
+  box-sizing: border-box
+}
+body{
+  margin: 0;
+  padding: 0;
+  background: rgb(209, 209, 209);
+}
