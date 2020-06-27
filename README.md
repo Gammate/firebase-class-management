@@ -1,3 +1,3 @@
 # Firebase class management
 
-A page to handle class program using firebase firestore
+A simple modular app to handle class program schedule using firebase firestore
