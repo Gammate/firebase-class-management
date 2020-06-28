@@ -1,9 +1,9 @@
-export const getByID = async (collection, id) => {
-  const result = firebase.firestore().collection(collection).doc(id).get()
-  return result.data()
-}
-
-export const getAll = async (collection, orderBy) => {
-  const result = firebase.collection(collection).orderBy(orderBy, 'desc').get()
-  return result.data()
+export default async function (db, collection, query) {
+  if (query) { /* .orderBy(orderBy, 'desc') */ }
+  const snapshot = await db.collection(collection).get().catch(error => console.log(error))
+  const result = snapshot.docs.map(doc => ({
+    id: doc.id,
+    ...doc.data()
+  }))
+  return result
 }

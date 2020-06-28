@@ -8,11 +8,12 @@ export default (clickHandler) => {
       clickHandler[e.target.id]()
       return
     }
-    const formElement = e.target.parentNode,
+    const jsonObject = {},
+      formElement = e.target.parentNode,
       inputElements = formElement.getElementsByTagName("input"), // text, checkbox, redio-button, file
       selectElements = formElement.getElementsByTagName("select"),
-      textareaElements = formElement.getElementsByTagName("textarea"),
-      jsonObject = {}
+      textareaElements = formElement.getElementsByTagName("textarea")
+
     for (let i of inputElements) jsonObject[i.name] = i.value
     for (let i of selectElements) jsonObject[i.name] = i.value
     for (let i of textareaElements) jsonObject[i.name] = i.value

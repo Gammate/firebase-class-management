@@ -1,15 +1,23 @@
 import handlers from './scripts/clickhandlers.mjs'
 import listener from './scripts/clicklistener.mjs'
 import write from './scripts/preview/write.mjs'
-import * as db from './scripts/firestore/index.mjs'
+import app from './scripts/firestore/index.mjs'
+import firebaseConfig from './firebaseConfig.private.mjs'
 
+// -- initialization
 // firebase is already defined
-firebase.initializeApp(db.config);
+(function () {
+  firebase.initializeApp(firebaseConfig)
+  const db = firebase.firestore()
+  
+  
+  
+  window['store'] = new app(db)
+  window['write'] = write
+})()
 
-// write is defined as a demonstration function
-window['write'] = write
-// db is defined as an interaction to the firebase
-window['db'] = db
-
+// -- application
 listener(handlers)
+
+// -- all good
 console.log('up and running')
